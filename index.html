@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <!-- --- UPDATED THIS LINE --- -->
+    <link rel="icon" type="image/webp" href="/icon.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Digimon: Time Stranger Countdown</title>
+
+    <!-- Google Fonts for Digimon Vibe -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Orbitron:wght@400;700&family=Press+Start+2P&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="./style.css">
+  </head>
+  <body>
+    <div id="full-page-container">
+      <!-- Main game emblem/logo -->
+      <img src="/game_emblem.png" alt="Digimon Story Time Stranger Emblem" id="game-emblem">
+
+      <div id="app">
+        <!-- The actual countdown elements -->
+        <div id="countdown-container">
+          <div class="countdown-item">
+            <span id="days" class="number">00</span>
+            <span class="label">DAYS</span>
+          </div>
+          <div class="countdown-item">
+            <span id="hours" class="number">00</span>
+            <span class="label">HOURS</span>
+          </div>
+          <div class="countdown-item">
+            <span id="minutes" class="number">00</span>
+            <span class="label">MINUTES</span>
+          </div>
+          <div class="countdown-item">
+            <span id="seconds" class="number">00</span>
+            <span class="label">SECONDS</span>
+          </div>
+        </div>
+
+        <p id="release-info">Releasing on <span id="release-date-display">02/10/2025</span></p>
+
+        <!-- Section for Bandai Namco and Steam links with images -->
+        <div id="more-info-links">
+          <h3>Where to Find More Info:</h3>
+          <div class="links-group">
+            <a href="https://en.bandainamcoent.eu/digimon/digimon-story-time-stranger" target="_blank" rel="noopener noreferrer" class="info-link">
+              <img src="/bandai.png" alt="Bandai Namco Official Site Logo" class="link-logo bandai-logo">
+            </a>
+            <a href="https://store.steampowered.com/app/1984270/Digimon_Story_Time_Stranger/" target="_blank" rel="noopener noreferrer" class="info-link">
+              <img src="/steam.png" alt="Steam Store Page Logo" class="link-logo steam-logo">
+            </a>
+          </div>
+        </div>
+        
+      </div>
+    </div>
+
+    <script type="module" src="/main.js"></script>
+  </body>
+</html>

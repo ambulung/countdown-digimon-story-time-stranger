@@ -1,0 +1,284 @@
+/* Google Fonts Imported in index.html */
+/* 'Inter' for general text, 'Orbitron' for headings, 'Press Start 2P' for pixelated elements */
+:root {
+  font-family: 'Inter', sans-serif; /* Default modern font */
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: dark; /* Overall dark page */
+  color: #E0E0E0; /* Light grey for most text on dark backgrounds */
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Faded Yellow Color Variable (for consistency) */
+:root {
+  --faded-yellow: rgba(255, 255, 150, 0.7);
+  --faded-yellow-stronger: rgba(255, 255, 150, 0.4);
+  --faded-yellow-subtle: rgba(255, 255, 150, 0.2);
+}
+
+body {
+  margin: 0;
+  display: flex;
+  justify-content: center; /* Center content horizontally */
+  align-items: center; /* Center content vertically */
+  min-width: 320px;
+  min-height: 100vh;
+  /* Use bg.png as the main background for the entire page */
+  /* For CDN image, change url('/bg.png') to url('YOUR_CDN_URL/bg.png') */
+  background: url('/bg.png') no-repeat center center fixed; /* Make sure path matches your image name */
+  background-size: cover;
+  overflow: auto; /* Allow scrolling if content overflows */
+  position: relative;
+  background-color: transparent; /* Ensure no solid background color on body */
+}
+
+/* Full page overlay to subtly darken bg.png for better content contrast */
+body::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4); /* Subtle dark overlay, no blur */
+  z-index: -1; /* Place behind content */
+}
+
+
+#full-page-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 800px; /* Max width for the whole content block */
+  width: 90%; /* Responsive width */
+  padding: 20px 0; /* Vertical padding for spacing */
+  box-sizing: border-box; /* Include padding in width */
+}
+
+#game-emblem {
+  max-width: 350px; /* Larger size for the emblem */
+  height: auto;
+  margin-bottom: 30px; /* Space below emblem */
+}
+
+#app {
+  width: 100%; /* Take full width of its parent */
+  padding: 40px; /* Ample padding inside the box */
+  text-align: center;
+  border-radius: 15px; /* Rounded corners for the box */
+
+  /* --- Box Background: Character Image with Dark Transparent Overlay --- */
+  /* For CDN image, change url('/character_bg.png') to url('YOUR_CDN_URL/character_bg.png') */
+  background-image: url('/character_bg.png'); /* PATH TO YOUR CROPPED CHARACTER BACKGROUND IMAGE */
+  background-size: cover; /* Cover the whole area */
+  background-position: center; /* Center the image within the box */
+  background-repeat: no-repeat;
+  /* Dark tint with transparency *on top of* character_bg.png */
+  background-color: rgba(26, 26, 46, 0.6); /* Dark tint from previous dark theme, 60% opacity */
+
+  /* Faded yellow border and glow for the "outline" */
+  border: 1px solid var(--faded-yellow); /* Faded yellow border */
+  box-shadow: 0 0 15px var(--faded-yellow-stronger), inset 0 0 5px var(--faded-yellow-subtle); /* Faded yellow glow */
+  
+  position: relative;
+  overflow: hidden; /* Ensures contents respect border-radius */
+}
+
+
+/* --- REMOVED header h2 styles --- */
+
+
+#countdown-container {
+  display: flex;
+  justify-content: center;
+  gap: 25px; /* Space between items */
+  margin-top: 0; /* Adjusted from 40px since the header is gone */
+  margin-bottom: 40px;
+  flex-wrap: wrap; /* Allow wrapping on smaller screens */
+}
+
+.countdown-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* Dark background for items */
+  background-color: #2A2A3F; /* Dark purple/grey for item backgrounds, slightly distinct */
+  border-radius: 8px; /* Consistent rounded corners */
+  padding: 15px 25px;
+  min-width: 110px; /* Ensure numbers fit */
+  /* Faded yellow glow for items */
+  border: 1px solid var(--faded-yellow); /* Faded yellow border */
+  box-shadow: 0 0 10px var(--faded-yellow-stronger), inset 0 0 5px var(--faded-yellow-subtle);
+}
+
+.countdown-item .number {
+  font-family: 'Press Start 2P', cursive; /* Pixel font for numbers */
+  font-size: 3.8em; /* Large pixel numbers */
+  font-weight: bold;
+  color: #FF9900; /* Vibrant orange/gold for numbers */
+  text-shadow: 0 0 8px #FF9900, 0 0 15px #FF9900; /* Orange glow */
+  line-height: 1; /* Tighter line height for numbers */
+  margin-bottom: 0.2em;
+}
+
+.countdown-item .label {
+  font-family: 'Press Start 2P', cursive; /* Pixel font for labels */
+  font-size: 0.8em; /* Smaller pixel labels */
+  color: #B0B0B0; /* Light grey */
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+#release-info {
+  font-family: 'Press Start 2P', cursive; /* Pixel font for release info line */
+  font-size: 1.1em;
+  color: #C0C0C0; /* Light grey */
+  margin-top: 30px;
+  text-shadow: 0 0 5px rgba(255,255,255,0.1);
+}
+
+#release-date-display {
+  color: #FF9900; /* Vibrant Orange */
+  text-shadow: 0 0 8px #FF9900, 0 0 15px #FF9900; /* Orange glow */
+  font-weight: normal; /* Press Start 2P is usually one weight */
+}
+
+/* Countdown finished message */
+#countdown-container h2 {
+  font-family: 'Press Start 2P', cursive; /* Pixel font for "OUT NOW" */
+  font-size: 2.5em;
+  color: #FFCC00; /* Yellow for celebration */
+  text-shadow: 0 0 10px #FFCC00, 0 0 20px #FFCC00;
+  margin-top: 40px;
+}
+
+#release-message { /* This is the element main.js targets when done */
+  font-family: 'Orbitron', sans-serif; /* Back to Orbitron for the final large message */
+  font-size: 2em !important;
+  color: #FF9900 !important; /* Orange */
+  text-shadow: 0 0 10px #FF9900, 0 0 20px #FF9900 !important;
+  margin-top: 20px;
+}
+
+/* --- Styles for Bandai Namco & Steam links with images --- */
+#more-info-links {
+  margin-top: 40px;
+  padding-top: 30px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1); /* Subtle separator line on dark bg */
+}
+
+#more-info-links h3 {
+  font-family: 'Inter', sans-serif;
+  font-size: 1.3em;
+  color: #E0E0E0; /* Light grey text for contrast against dark app background */
+  margin-bottom: 20px;
+  font-weight: 700;
+}
+
+.links-group {
+  display: flex;
+  flex-wrap: wrap; /* Allow wrapping on smaller screens */
+  justify-content: center;
+  gap: 15px; /* Space between link containers */
+}
+
+.info-link {
+  display: flex; /* Allows centering image */
+  justify-content: center;
+  align-items: center;
+  width: 180px; /* Fixed width for button-like appearance */
+  height: 60px; /* Fixed height */
+  /* --- CHANGED TO FADED YELLOW BACKGROUND --- */
+  background-color: rgba(255, 255, 150, 0.8); /* Faded yellow background */
+  border-radius: 8px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  /* Faded yellow border and glow for the links */
+  border: 1px solid var(--faded-yellow);
+  box-shadow: 0 0 10px var(--faded-yellow-stronger), inset 0 0 5px var(--faded-yellow-subtle);
+}
+
+.info-link:hover {
+  /* --- CHANGED TO A BRIGHTER FADED YELLOW --- */
+  background-color: rgba(255, 255, 150, 0.9); /* More opaque/brighter yellow on hover */
+  box-shadow: 0 0 15px var(--faded-yellow), inset 0 0 7px var(--faded-yellow-stronger);
+  transform: translateY(-3px); /* Subtle lift effect */
+}
+
+.link-logo {
+  max-width: 80%; /* Ensure logo fits within the button */
+  max-height: 80%;
+  height: auto;
+  /* Your logos (bandai.png, steam.png) should be dark to show up well on yellow */
+}
+
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  #full-page-container {
+    width: 95%;
+  }
+  #game-emblem {
+    max-width: 280px; /* Adjust for smaller screens */
+    margin-bottom: 20px;
+  }
+  #app {
+    padding: 25px;
+  }
+  /* header h2 removed */
+  #countdown-container {
+    gap: 15px;
+  }
+  .countdown-item {
+    min-width: 75px;
+    padding: 10px 15px;
+  }
+  .countdown-item .number {
+    font-size: 2.5em;
+  }
+  .countdown-item .label {
+    font-size: 0.7em;
+  }
+  #release-info {
+    font-size: 0.9em;
+  }
+  #countdown-container h2 {
+    font-size: 1.5em;
+  }
+  #release-message {
+    font-size: 1.6em !important;
+  }
+  #more-info-links h3 {
+    font-size: 1.1em;
+  }
+  .info-link {
+    width: 160px; /* Adjust width for smaller screens */
+    height: 50px;
+  }
+  .links-group {
+    flex-direction: column; /* Stack buttons vertically on small screens */
+    align-items: center;
+  }
+}
+
+@media (max-width: 480px) {
+  #game-emblem {
+    max-width: 220px; /* Even smaller for mobile */
+  }
+  #app {
+    padding: 20px 15px;
+  }
+  /* header h2 removed */
+  .countdown-item {
+    min-width: unset;
+    flex-basis: 45%; /* Two items per row */
+  }
+  .countdown-item .number {
+    font-size: 2em;
+  }
+}
